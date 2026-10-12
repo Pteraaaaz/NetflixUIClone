@@ -1,0 +1,38 @@
+.movie-row{
+    padding: 20px 40px;
+}
+
+.movie-row-title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.movie-row-posters{
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.movie-row-posters::-webkit-scrollbar{
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.movie-row-posters{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media (max-width: 768px){
+    .movie-row{
+        padding: 15px 20px;
+    }
+
+    .movie-row-title{
+        font-size: 1.1rem;
+    }
+}

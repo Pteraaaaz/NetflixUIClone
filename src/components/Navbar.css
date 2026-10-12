@@ -1,0 +1,95 @@
+.navbar{
+    /*pins the navbar to the top. Setting the z-index high so it'll stay above the rest*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    /*Creating flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+
+    /*Navbar background setting using linear-gradient(deg, first color, second color) */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    /* Transition for smooth color transitions when scrolling*/
+    transition: background-color 0.3s ease;
+}
+
+.navbar.navbar-black {
+    background: #141414;
+}
+
+.navbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #141414;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+/* When scrolled */
+.navbar.navbar-black::before {
+    opacity: 1;
+}
+
+.navbar-logo{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e50914;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.navbar-links{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.navbar-links li{
+    font-size: 0.95rem;
+    color: #e5e5e5;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.navbar-links li:hover{
+    color: #fff;
+}
+
+.navbar-profile{
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #e50914;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* 
+    Adding responsiveness into the navbar. When the screen shrinks, the links will disappear
+    The logo will shrink.
+*/
+
+@media (max-width: 768px){
+    .navbar{
+        padding: 12px 20px;
+    }
+
+    .navbar-links{
+        display: none;
+    }
+
+    .navbar-logo{
+        font-size: 1.4rem;
+    }
+}
